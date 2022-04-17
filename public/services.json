@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "picture":"",
+      "name": "",
+      "description": "",
+      "price": ""
+    },
+    {
+        "id": 2,
+        "picture":"",
+        "name": "",
+        "description": "",
+        "price": ""
+    },
+    {
+        "id": 3,
+        "picture":"",
+        "name": "",
+        "description": "",
+        "price": ""
+    },
+    {
+        "id": 4,
+        "picture":"",
+        "name": "",
+        "description": "",
+        "price": ""
+    },
+    {"id": 5,
+        "picture":"",
+        "name": "",
+        "description": "",
+        "price": ""
+    },
+    {
+        "id": 6,
+        "picture":"",
+        "name": "",
+        "description": "",
+        "price": ""
+    }
+  ]

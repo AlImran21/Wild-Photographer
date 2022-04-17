@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css';
-import photographer1 from '../../images/photographer1.jpg'
+import banner from '../../images/wild/banner.jpg';
 
 
 const Home = () => {
@@ -8,12 +8,12 @@ const Home = () => {
         <div>
             <div className='flex justify-items-center items-center justify-around'>
                 <div className='banner-image'>
-                    <img className='rounded mt-24' src={photographer1} alt="" />
+                    <img className='rounded mt-24' src={banner} alt="" />
 
                 </div>
                 <div className='mt-40'>
                     <div className='mr-48'>
-                        <p className='banner-text-color text-3xl font-bold mr-24'>Hello This is A.I.</p>
+                        <p className='banner-text-color text-3xl font-bold mr-24'>Hey, this is A.I.</p>
                         <p className='banner-text-color text-3xl font-bold mt-3'>A companion to frame</p>
                         <p className='banner-text-color text-3xl font-bold mt-3'>Your favorite moments</p>
                     </div>
