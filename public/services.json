@@ -1,43 +1,43 @@
 [
     {
       "id": 1,
-      "picture":"",
-      "name": "",
-      "description": "",
-      "price": ""
+      "picture":"https://thumbor.forbes.com/thumbor/711x587/https://specials-images.forbesimg.com/imageserve/5f9986a7c0312f81b7499f2b/Funny-Wild-Animals-photo-competition--A-blue-bird-with-a-fish-lands-in-a--no-fishing-/960x0.jpg?fit=scale",
+      "name": "Pictures of birds",
+      "description": "Most birds are quite shy, so you need at least 200mm (300mm is better) to take pictures of them. Longer focal length not only lets to photograph birds from larger distance, it also gives more blurred background. However more millimeters (or larger aperture) means more expensive, larger and heavier lens.",
+      "price": "$75"
     },
     {
         "id": 2,
-        "picture":"",
-        "name": "",
-        "description": "",
-        "price": ""
+        "picture":"https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/herd-of-indian-spotted-deer-chital-athul-krishnan-wwwathulin.jpg",
+        "name": "Picture of deer",
+        "description": " Deer are vocal animals. Deer use vocalisation for social contact, mother-young interactions, encounters with predators and breeding. All species of deer found in Britain make loud, harsh barking calls when they detect potential danger. The acoustics of the bark conveys information on their gender, age and identity.",
+        "price": "$150"
     },
     {
         "id": 3,
-        "picture":"",
-        "name": "",
-        "description": "",
-        "price": ""
+        "picture":"https://www.thoughtco.com/thmb/WjhQmcfru6AmS69toq8DOv_YGaA=/2578x2578/smart/filters:no_upscale()/close-up-view-of-a-mother-brown-bear-standing-over-her-cub-as-they-appear-to-be-looking-out-for-any-danger--kuril-lake--kamchatka--russia--827261734-5b97dfaa46e0fb0050b348af.jpg",
+        "name": "Pictures of bears",
+        "description": "Bears are found on the continents of North America, South America, Europe, and Asia. Common characteristics of modern bears include large bodies with stocky legs, long snouts, small rounded ears, shaggy hair, plantigrade paws with five nonretractile claws, and short tails.",
+        "price": "$120"
     },
     {
         "id": 4,
-        "picture":"",
-        "name": "",
-        "description": "",
-        "price": ""
+        "picture":"https://www.thoughtco.com/thmb/L7FTPqUvE3Ajwhfu_6tppglAOoY=/1500x1000/filters:fill(auto,1)/red_kangaroo-24c18ab08dc145f1a798abd4b820390a.jpg",
+        "name": "Pictures of kangaroos",
+        "description": "All kangaroos have short hair, powerful hind legs, small forelimbs, big feet and a long tail. They have excellent hearing and keen eyesight. Depending on the species, their fur coat can be red, grey or light to dark brown. Their muscular tail is used for balance when hopping, and as another limb when moving about.",
+        "price": "$200"
     },
     {"id": 5,
-        "picture":"",
-        "name": "",
-        "description": "",
-        "price": ""
+        "picture":"https://cdn.britannica.com/29/150929-050-547070A1/lion-Kenya-Masai-Mara-National-Reserve.jpg",
+        "name": "Pictures of lions",
+        "description": "Lions have strong, compact bodies and powerful forelegs, teeth and jaws for pulling down and killing prey. Their coats are yellow-gold, and adult males have shaggy manes that range in color from blond to reddish-brown to black. The length and color of a lion's mane is likely determined by age, genetics and hormones.",
+        "price": "$250"
     },
     {
         "id": 6,
-        "picture":"",
-        "name": "",
-        "description": "",
-        "price": ""
+        "picture":"https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8&w=1000&q=80",
+        "name": "Pictures of horses",
+        "description": "Horse or Equine photography is a very broad term describing any photography involving a horse. It can include but is not limited to specialties like: A photo of human clients with their horses when the human/horse bond is part of the story. This could include family images, senior images or personal branding images.",
+        "price": "$300"
     }
   ]

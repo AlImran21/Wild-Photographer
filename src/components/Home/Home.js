@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.css';
 import banner from '../../images/wild/banner.jpg';
+import ServiceDetails from '../Services/ServiceDetails';
 
 
 const Home = () => {
+    const [services, setServices] = useState([]);
+
+    useEffect( () => {
+        fetch('services.json')
+        .then(res => res.json())
+        .then(data => setServices(data))
+    }, []);
+
+
     return (
         <div>
             <div className='flex justify-items-center items-center justify-around'>
@@ -21,15 +31,16 @@ const Home = () => {
                 </div>
             </div>
             <div className='mt-40 mb-40 mx-auto'>
-                {/* <p className='text-4xl font-bold'>Customers Reviews : ({reviews.length})</p>
+                <p className='text-4xl font-bold'>Our Services : ({services.length})</p>
             <div className='reviews-container grid grid-cols-3 gap-45 mt-16'>
                 {
-                    reviews.map(review => <Reviews
-                        key={review.id}
-                        review={review}
-                    ></Reviews>)
+                    services.map(service => <ServiceDetails
+                    key={service.id}
+                    service={service}
+                    ></ServiceDetails>)
                 }
-            </div> */}
+            </div>
+
             </div>
 
         </div>
