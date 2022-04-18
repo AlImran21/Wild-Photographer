@@ -1,6 +1,6 @@
 # Wild Photographer
 
-### Click here to visit live site link : [https://my-assignment10-with-react.web.app/](https://my-assignment10-with-react.web.app/)
+### Click here to visit live site link : [https://my-assignment10-with-react.web.app/](https://my-assignment10-with-react.web.app/) 
 
 ## Features of this project
 
