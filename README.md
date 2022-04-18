@@ -1,6 +1,6 @@
 # Wild Photographer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Click here to visit live site link : [https://my-assignment10-with-react.web.app/](https://my-assignment10-with-react.web.app/)
 
 ## Features of this project
 
