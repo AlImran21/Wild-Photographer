@@ -1,9 +1,12 @@
 import React, { useRef } from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css'
 import googleLogo from '../../images/google.svg';
+import { async } from '@firebase/util';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
@@ -23,12 +26,14 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth);
 
-    if (googleError) {
-        errorElement = <p style={{ color: 'red' }}>Error: {googleError?.message}</p>
+
+    if (error || googleError) {
+        errorElement = <p style={{ color: 'red' }}>Error: {error?.message} {googleError?.message}</p>
     }
 
-    if (googleUser) {
+    if (user || googleUser) {
         navigate('/');
     }
 
@@ -50,6 +55,17 @@ const Login = () => {
 
     const navigateRegister = (event) => {
         navigate('/register');
+    }
+
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Sent email');
+        } else {
+            toast('Please, enter your email');
+        }
+
     }
 
     return (
@@ -77,6 +93,10 @@ const Login = () => {
                     <span className='new-to-wild-text'>New to Wild Photographer?</span>
                     <span onClick={navigateRegister} className='form-link ml-2'>Please, Register</span>
                 </p>
+                <p style={{ cursor: 'pointer' }} className='text-center py-2'>
+                    <span className='new-to-wild-text'>Forget Password?</span>
+                    <span onClick={resetPassword} className='text-blue-500 ml-2'>Reset Password</span>
+                </p>
                 <div className='horizontal-divider'>
                     <div className='line-left' />
                     <p>or</p>
@@ -91,6 +111,7 @@ const Login = () => {
                 <div className='mb-5'>
                     {errorElement}
                 </div>
+                <ToastContainer />
 
             </div>
         </div>

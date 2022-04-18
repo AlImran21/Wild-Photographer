@@ -1,0 +1,15 @@
+@media screen and (max-width:576px) {
+    /* footer {
+        text-align: center;
+    } */
+    
+    .footer-text {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .dynamic-year {
+        margin-left: 2px;
+    }
+    
+}

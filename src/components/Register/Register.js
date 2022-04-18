@@ -13,7 +13,8 @@ const Register = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
 
     const navigate = useNavigate()
 
@@ -30,8 +31,8 @@ const Register = () => {
         createUserWithEmailAndPassword(email, password);
     }
 
-    if (googleError) {
-        errorElement = <p style={{ color: 'red' }}>Error: {googleError?.message}</p>
+    if (error || googleError) {
+        errorElement = <p style={{ color: 'red' }}>Error: {error?.message} {googleError?.message}</p>
     }
 
     if (googleUser) {

@@ -18,3 +18,33 @@
     text-align: justify;
     line-height: 30px;
 }
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+/* make services responsive */
+@media screen and (max-width:576px) {
+    .banner-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .banner-heading p {
+        font-size: 18px;
+        text-align: center;
+        margin: 0;
+    }
+
+    .banner-description p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .services-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
