@@ -83,9 +83,9 @@ const Register = () => {
                         <p> Continue with Google </p>
                     </button>
                 </div>
-                <div className='mb-5'>
+                {/* <div className='mb-5'>
                     {errorElement}
-                </div>
+                </div> */}
 
             </div>
         </div>
