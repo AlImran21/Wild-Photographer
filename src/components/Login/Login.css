@@ -116,7 +116,10 @@
     padding: 2px;
     border-radius: 7px;
     border: none;
-    margin: 55px 0;
+    margin: 25px 0;
+
+    /* margin-top: 55px; */
+
 
 }
 

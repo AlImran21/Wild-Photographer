@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import googleLogo from '../../images/google.svg';
 
 const Register = () => {
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+    let errorElement;
+
     const [
         createUserWithEmailAndPassword,
         user,
@@ -25,6 +28,14 @@ const Register = () => {
         const password = event.target.password.value;
 
         createUserWithEmailAndPassword(email, password);
+    }
+
+    if (googleError) {
+        errorElement = <p style={{ color: 'red' }}>Error: {googleError?.message}</p>
+    }
+
+    if (googleUser) {
+        navigate('/');
     }
 
     if (user) {
@@ -48,9 +59,12 @@ const Register = () => {
                         <label className='text-left' htmlFor="password">Password</label>
                         <input type="password" name="password" id="" required placeholder='Enter Password' />
                     </div>
-                    <p style={{ color: 'red' }}>
-                        {error}
+                    <p className='text-left' style={{ color: 'red' }}>
+                        {error?.message}
                     </p>
+                    {
+                        loading && <p>Loading...</p>
+                    }
                     <input className='form-submit' type="submit" value="Register" />
                 </form>
                 <p style={{ cursor: 'pointer' }} className='text-center'>
@@ -63,10 +77,13 @@ const Register = () => {
                     <div className='line-right' />
                 </div>
                 <div className='input-wrapper'>
-                    <button className='google-auth'>
+                    <button onClick={() => signInWithGoogle()} className='google-auth'>
                         <img src={googleLogo} alt='' />
                         <p> Continue with Google </p>
                     </button>
+                </div>
+                <div className='mb-5'>
+                    {errorElement}
                 </div>
 
             </div>

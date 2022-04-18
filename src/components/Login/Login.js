@@ -1,11 +1,14 @@
 import React, { useRef } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css'
 import googleLogo from '../../images/google.svg';
 
 const Login = () => {
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+    let errorElement;
+
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const navigate = useNavigate();
@@ -18,12 +21,21 @@ const Login = () => {
         user,
         loading,
         error,
-      ] = useSignInWithEmailAndPassword(auth);
+    ] = useSignInWithEmailAndPassword(auth);
 
 
-      if (user) {
-          navigate(from, { replace: true });
-      }
+    if (googleError) {
+        errorElement = <p style={{ color: 'red' }}>Error: {googleError?.message}</p>
+    }
+
+    if (googleUser) {
+        navigate('/');
+    }
+
+
+    if (user) {
+        navigate(from, { replace: true });
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -33,7 +45,7 @@ const Login = () => {
 
         signInWithEmailAndPassword(email, password);
 
-        
+
     }
 
     const navigateRegister = (event) => {
@@ -62,7 +74,7 @@ const Login = () => {
                     <input className='form-submit' type="submit" value="Login" />
                 </form>
                 <p style={{ cursor: 'pointer' }} className='text-center'>
-                    <span className='new-to-wild-text'>New to Wild Photographer?</span> 
+                    <span className='new-to-wild-text'>New to Wild Photographer?</span>
                     <span onClick={navigateRegister} className='form-link ml-2'>Please, Register</span>
                 </p>
                 <div className='horizontal-divider'>
@@ -71,10 +83,13 @@ const Login = () => {
                     <div className='line-right' />
                 </div>
                 <div className='input-wrapper'>
-                    <button className='google-auth'>
+                    <button onClick={() => signInWithGoogle()} className='google-auth'>
                         <img src={googleLogo} alt='' />
                         <p> Continue with Google </p>
                     </button>
+                </div>
+                <div className='mb-5'>
+                    {errorElement}
                 </div>
 
             </div>
